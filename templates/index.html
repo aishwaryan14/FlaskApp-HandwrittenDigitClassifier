@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>DIGIT RECOGNIZER</title>
+	<style>
+		body{
+			background-color: black;
+		}
+		input[type=submit]{
+			background-color: transparent;
+			border-color: white;
+			color: white;
+  			padding: 15px 20px;
+			margin: 10px 1px;
+			box-sizing: border-box;
+		}
+		input[type=file]{
+			color: white; 
+			padding: 1px 1px;
+			margin: 1px 1px;
+		}
+		h2{
+			color: white;
+			background-color: transparent; 
+		}
+	p{
+		color: white;
+	}	
+	</style>
+</head>
+<body>	
+<form action="{{url_for('index')}}" method="POST">
+  <input type="file" name="pic" accept="images/*" required><br>
+  <input type="submit" name="action" value="SUBMIT" onclick="sub()"><br>
+</form>
+<p id="para">{{predict}}</p>
+<h2>{{prediction}}</h2>
+<p>{{Accuracy}}{{accuracy}}</p><br>
+<script type="text/javascript">
+	function sub(){
+		document.getElementById("para").innerHTML="Prediction...";
+	}
+</script>
+</body>
+</html>
